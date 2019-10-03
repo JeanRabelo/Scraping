@@ -1,0 +1,26 @@
+from selenium import webdriver
+from selenium.webdriver.support.ui import Select
+
+driver = webdriver.Chrome()
+url_bcb = 'https://www.bcb.gov.br/estatisticas/reporttxjuros?path=conteudo%2Ftxcred%2FReports%2FTaxasCredito-Consolidadas-porTaxasAnuais-Historico.rdl&nome=Hist%C3%B3rico%20Posterior%20a%2001%2F01%2F2012&exibeparametros=true'
+driver.get(url_bcb)
+driver.implicitly_wait(time_to_wait=30)
+driver.find_element_by_id("periodoInicial").click()
+Select(driver.find_element_by_id("periodoInicial")).select_by_visible_text("12/09/2019")
+driver.find_element_by_id("modalidade").click()
+Select(driver.find_element_by_id("modalidade")).select_by_visible_text(u"Crédito pessoal não-consignado")
+driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='de 2'])[1]/following::img[6]").click()
+driver.find_element_by_id("modalidade").click()
+Select(driver.find_element_by_id("modalidade")).select_by_visible_text(u"Crédito pessoal não-consignado")
+driver.find_element_by_id("periodoInicial").click()
+Select(driver.find_element_by_id("periodoInicial")).select_by_visible_text("12/09/2019")
+driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='de 2'])[1]/following::img[6]").click()
+driver.find_element_by_id("periodoInicial").click()
+Select(driver.find_element_by_id("periodoInicial")).select_by_visible_text("11/09/2019")
+driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='de 2'])[1]/following::img[6]").click()
+driver.find_element_by_id("periodoInicial").click()
+Select(driver.find_element_by_id("periodoInicial")).select_by_visible_text("10/09/2019")
+driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='de 2'])[1]/following::img[6]").click()
+driver.find_element_by_id("periodoInicial").click()
+Select(driver.find_element_by_id("periodoInicial")).select_by_visible_text("09/09/2019")
+driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='de 2'])[1]/following::img[6]").click()
