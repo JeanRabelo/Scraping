@@ -7,11 +7,11 @@ driver.get('https://www.bcb.gov.br/estatisticas/reporttxjuros?path=conteudo%2Ftx
 driver.implicitly_wait(time_to_wait=120)
 
 def escolher_modalidade(str_modalidade):
-    driver.find_element_by_id("modalidade").click()
+    # driver.find_element_by_id("modalidade").click()
     Select(driver.find_element_by_id("modalidade")).select_by_visible_text(str_modalidade)
 
 def baixar_dia(str_dia):
-    driver.find_element_by_id("periodoInicial").click()
+    # driver.find_element_by_id("periodoInicial").click()
     Select(driver.find_element_by_id("periodoInicial")).select_by_visible_text(str_dia)
     driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='de 2'])[1]/following::img[6]").click()
     print('Foi baixado o CSV do dia: ' + str_dia)
