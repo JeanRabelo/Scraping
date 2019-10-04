@@ -23,5 +23,4 @@ df_datas = pd.read_csv(r"C:\Users\jean_\Google Drive\1-Análise de mercado\BI\da
 for columns, row in df_datas.iterrows():
     baixar_dia(row['Datas'])
 
-
 print('terminou')
