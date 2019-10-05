@@ -1,4 +1,5 @@
 import pandas as pd
+from time import sleep
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 
@@ -7,20 +8,22 @@ driver.get('https://www.bcb.gov.br/estatisticas/reporttxjuros?path=conteudo%2Ftx
 driver.implicitly_wait(time_to_wait=120)
 
 def escolher_modalidade(str_modalidade):
-    driver.find_element_by_id("modalidade").click()
     Select(driver.find_element_by_id("modalidade")).select_by_visible_text(str_modalidade)
-
-def baixar_dia(str_dia):
-    driver.find_element_by_id("periodoInicial").click()
-    Select(driver.find_element_by_id("periodoInicial")).select_by_visible_text(str_dia)
-    driver.find_element_by_xpath("(.//*[normalize-space(text()) and normalize-space(.)='de 2'])[1]/following::img[6]").click()
-    print('Foi baixado o CSV do dia: ' + str_dia)
 
 escolher_modalidade(u"Crédito pessoal não-consignado")
 
-df_datas = pd.read_csv(r"C:\Users\jean_\Google Drive\1-Análise de mercado\BI\datas_corretas.csv")
+campo_periodoInicial = Select(driver.find_element_by_id("periodoInicial"))
 
-for columns, row in df_datas.iterrows():
-    baixar_dia(row['Datas'])
+df_datas_site_bcb = pd.DataFrame(columns=['Datas_no_bacen'])
 
-print('terminou')
+sleep(20)
+
+print('Vai entrar no loop agora')
+
+for opcao in campo_periodoInicial.options:
+    str_data_no_bacen = str(opcao.get_attribute('text'))
+    df_datas_site_bcb = df_datas_site_bcb.append({'Datas_no_bacen':str_data_no_bacen},ignore_index=True)
+
+print(df_datas_site_bcb)
+
+df_datas_site_bcb.to_csv(r"C:\Users\jean_\Google Drive\1-Análise de mercado\BI\datas_no_bacen.csv")
