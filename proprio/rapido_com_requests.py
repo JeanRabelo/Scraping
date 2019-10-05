@@ -20,6 +20,6 @@ with open('out_2.csv', 'r') as f:
 new_csv_str = re.sub("'", "", my_csv_text)
 
 # open new file and save
-new_csv_path = 'out_2.csv' # or whatever path and name you want
+new_csv_path = 'out_3.csv' # or whatever path and name you want
 with open(new_csv_path, 'w') as f:
     f.write(new_csv_str)
