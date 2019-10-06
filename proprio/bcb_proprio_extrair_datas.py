@@ -10,7 +10,8 @@ driver.implicitly_wait(time_to_wait=120)
 def escolher_modalidade(str_modalidade):
     Select(driver.find_element_by_id("modalidade")).select_by_visible_text(str_modalidade)
 
-escolher_modalidade(u"Crédito pessoal não-consignado")
+# escolher_modalidade(u"Crédito pessoal não-consignado")
+escolher_modalidade(u"Capital de giro com prazo até 365 dias")
 
 campo_periodoInicial = Select(driver.find_element_by_id("periodoInicial"))
 
