@@ -1,0 +1,32 @@
+﻿Textbox15,Textbox4,Textbox10
+02/01/2017 a 06/01/2017,Pessoa jurídica - Capital de giro com prazo superior a 365 dias,Pré-fixado
+
+POSICAO,IF_NM,TAXAS_MENSAIS,TAXAS_ANUAIS
+1,BCO SAFRA S.A.,"   1,16","    14,85"
+2,BCO SOCIETE GENERALE BRASIL,"   1,21","    15,53"
+3,SOCINAL S.A. CFI,"   1,44","    18,70"
+4,BCO ABC BRASIL S.A.,"   1,45","    18,86"
+5,BCO CATERPILLAR S.A.,"   1,50","    19,60"
+6,BCO DAYCOVAL S.A,"   1,81","    24,00"
+7,BCO CCB BRASIL S.A.,"   1,97","    26,37"
+8,BCO INDUSTRIAL DO BRASIL S.A.,"   2,00","    26,82"
+9,BANCO FIDIS,"   2,01","    27,00"
+10,BCO BRADESCO S.A.,"   2,01","    27,03"
+11,BCO DO NORDESTE DO BRASIL S.A.,"   2,07","    27,84"
+12,CARUANA SCFI,"   2,07","    27,88"
+13,BCO VOLKSWAGEN S.A,"   2,12","    28,59"
+14,ITAÚ UNIBANCO S.A.,"   2,23","    30,30"
+15,BANCO PAN,"   2,23","    30,37"
+16,BCO DES. DE MG S.A.,"   2,24","    30,50"
+17,CAIXA ECONOMICA FEDERAL,"   2,25","    30,62"
+18,BCO SANTANDER (BRASIL) S.A.,"   2,26","    30,78"
+19,HS FINANCEIRA,"   2,67","    37,12"
+20,BCO DO ESTADO DO RS S.A.,"   2,74","    38,37"
+21,BCO BANESTES S.A.,"   2,80","    39,28"
+22,BANCO TOPÁZIO S.A.,"   3,00","    42,50"
+23,BCO MERCANTIL DO BRASIL S.A.,"   3,04","    43,19"
+24,BCO TRIANGULO S.A.,"   3,22","    46,30"
+25,BCO DA AMAZONIA S.A.,"   3,42","    49,68"
+26,PORTOSEG S.A. CFI,"   3,49","    50,91"
+27,BRB - BCO DE BRASILIA S.A.,"   3,55","    52,01"
+

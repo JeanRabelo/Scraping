@@ -1,0 +1,35 @@
+﻿Textbox15,Textbox4,Textbox10
+02/01/2015 a 08/01/2015,Pessoa jurídica - Capital de giro com prazo superior a 365 dias,Pré-fixado
+
+POSICAO,IF_NM,TAXAS_MENSAIS,TAXAS_ANUAIS
+1,BCO VOLKSWAGEN S.A,"   0,52","     6,40"
+2,NEGRESCO S.A. - CFI,"   1,36","    17,53"
+3,BCO CITIBANK S.A.,"   1,40","    18,16"
+4,BCO DO ESTADO DO RS S.A.,"   1,46","    19,04"
+5,BCO DO NORDESTE DO BRASIL S.A.,"   1,48","    19,28"
+6,BCO DES. DE MG S.A.,"   1,49","    19,43"
+7,CAIXA ECONOMICA FEDERAL,"   1,60","    20,98"
+8,LECCA CFI S.A.,"   1,71","    22,58"
+9,BCO INDUSVAL S.A.,"   1,72","    22,78"
+10,BCO ABC BRASIL S.A.,"   1,80","    23,90"
+11,KIRTON BANK,"   1,90","    25,41"
+12,BCO SAFRA S.A.,"   1,91","    25,48"
+13,BCO VOTORANTIM S.A.,"   1,96","    26,30"
+14,CARUANA SCFI,"   1,98","    26,48"
+15,BCO ARBI S.A.,"   2,03","    27,24"
+16,BCO TRIANGULO S.A.,"   2,14","    28,97"
+17,BANCO FIDIS,"   2,16","    29,29"
+18,BCO BRADESCO S.A.,"   2,17","    29,41"
+19,BCO SANTANDER (BRASIL) S.A.,"   2,24","    30,46"
+
+20,BANCO PAN,"   2,33","    31,80"
+21,BCO AGIBANK S.A.,"   2,34","    31,93"
+22,ITAÚ UNIBANCO S.A.,"   2,47","    34,04"
+23,BCO DO EST. DE SE S.A.,"   2,73","    38,14"
+24,BCO DO BRASIL S.A.,"   2,78","    38,92"
+25,BRB - BCO DE BRASILIA S.A.,"   2,91","    41,11"
+26,BCO DA AMAZONIA S.A.,"   3,02","    42,97"
+27,BCO CCB BRASIL S.A.,"   3,07","    43,73"
+28,BCO MERCANTIL DO BRASIL S.A.,"   3,52","    51,48"
+29,PORTOSEG S.A. CFI,"   3,61","    53,10"
+

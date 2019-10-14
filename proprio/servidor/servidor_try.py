@@ -14,7 +14,7 @@ for columns, row in df_datas.iterrows():
     sleep(10)
     str_data = str(row['Datas_no_bacen'])
     # escrever a nova url aqui temporariamente
-    url = r'https://www.bcb.gov.br/api/relatorio/pt-br/contaspub?path=conteudo/txcred/Reports/TaxasCredito-Consolidadas-porTaxasAnuais-Historico.rdl&nome=RelatorioHist%C3%B3rico%20Posterior%20a%2001/01/2012&parametros=tipoPessoa:1;modalidade:402;periodoInicial:' + str_data + r'%2012:00:00%20AM;&exportar=CSV&exibeparametros=false'
+    url = r'https://www.bcb.gov.br/api/relatorio/pt-br/contaspub?path=conteudo/txcred/Reports/TaxasCredito-Consolidadas-porTaxasAnuais-Historico.rdl&nome=RelatorioHist%C3%B3rico%20Posterior%20a%2001/01/2012&parametros=tipoPessoa:1;modalidade:216;periodoInicial:' + str_data + r'%2012:00:00%20AM;&exportar=CSV&exibeparametros=false'
     # url = r'https://www.bcb.gov.br/api/relatorio/pt-br/contaspub?path=conteudo/txcred/Reports/TaxasCredito-Consolidadas-porTaxasAnuais-Historico.rdl&nome=RelatorioHist%C3%B3rico%20Posterior%20a%2001/01/2012&parametros=tipoPessoa:2;modalidade:301;periodoInicial:' + str_data + r'%2012:00:00%20AM;&exportar=CSV&exibeparametros=false'
     try:
         response = requests.get(url)
@@ -38,19 +38,19 @@ for columns, row in df_datas.iterrows():
 
 
     str_filename = str_data.replace(r'/',r'-')
-    with open('Dados_Juros_Bacen/PF/Aquisicao_de_outros_bens/' + str_filename + '.csv', 'wb') as f:
+    with open('Dados_Juros_Bacen/PF/Cheque_especial/' + str_filename + '.csv', 'wb') as f:
         writer = csv.writer(f,quotechar = "'", quoting=csv.QUOTE_ALL)
         for line in response.iter_lines():
             writer.writerow(line.split(',')) #.decode('utf-8')
 
-    with open('Dados_Juros_Bacen/PF/Aquisicao_de_outros_bens/' + str_filename + '.csv', 'r') as f:
+    with open('Dados_Juros_Bacen/PF/Cheque_especial/' + str_filename + '.csv', 'r') as f:
         my_csv_text = f.read()
 
     # substitute
     new_csv_str = re.sub("'", "", my_csv_text)
 
     # open new file and save
-    new_csv_path = 'Dados_Juros_Bacen/PF/Aquisicao_de_outros_bens/' + str_filename + '.csv' # or whatever path and name you want
+    new_csv_path = 'Dados_Juros_Bacen/PF/Cheque_especial/' + str_filename + '.csv' # or whatever path and name you want
     with open(new_csv_path, 'w') as f:
         f.write(new_csv_str)
 
