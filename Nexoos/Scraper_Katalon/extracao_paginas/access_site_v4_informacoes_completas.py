@@ -1,7 +1,6 @@
 from datetime import datetime
 from datetime import timedelta
 from bs4 import BeautifulSoup
-from os import system
 from pprint import pprint
 import json
 import csv
@@ -132,7 +131,6 @@ for i in range(0,n_emprestimos):
     resultado_parcial = open('emprestimos_parciais_ate_o_' + str(len(emprestimos)) + '.json', 'w')
     json.dump(emprestimos, resultado_parcial)
     resultado_parcial.close
-    system('cls')
     print(str(i + 1) + ' de ' + str(n_emprestimos + 1) + ' emprestimos gravados.')
     print('hora estimada de término: ' + str(datetime.now() + (float(n_emprestimos-i)*(datetime.now()-tempo_inicio)/(float(i + 1)))))
 
