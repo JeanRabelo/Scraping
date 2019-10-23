@@ -42,7 +42,7 @@ cod_emprestimos = carregar_dados('saida_tabelas_completo.csv', 8)
 valores_emprestimos = carregar_dados('saida_tabelas_completo.csv', 4)
 porcentagem_alcancada_do_emprestimo = carregar_dados('saida_tabelas_completo.csv', 7)
 
-n_emprestimos = len(cod_emprestimos) - 1
+n_emprestimos = len(cod_emprestimos)
 
 driver = fazer_login()
 print(5)
@@ -131,14 +131,12 @@ for i in range(0,n_emprestimos):
     resultado_parcial = open('emprestimos_parciais_ate_o_' + str(len(emprestimos)) + '.json', 'w')
     json.dump(emprestimos, resultado_parcial)
     resultado_parcial.close
-    print(str(i + 1) + ' de ' + str(n_emprestimos + 1) + ' emprestimos gravados.')
+    print(str(i + 1) + ' de ' + str(n_emprestimos) + ' emprestimos gravados.')
     porcentagem = float(i + 1)/float(n_emprestimos)
     print("{0:.3%}".format(porcentagem), end='')
-    print(' terminado')
-    print('hora estimada de término: ' + str(datetime.now() + (float(n_emprestimos-i)*(datetime.now()-tempo_inicio)/(float(i + 1)))))
+    print(' completo', end=' ')
+    print('hora estimada de término: ' + str(datetime.now() + (float(n_emprestimos-i)*(datetime.now()-tempo_inicio)/(float(i + 1)))), end=' ')
     print('hora atual: ' + str(datetime.now()))
-
-
 
 resultado_completo = open('emprestimos_completo_ate_o_' + str(len(emprestimos)) + '.json', 'w')
 json.dump(emprestimos, resultado_completo)
