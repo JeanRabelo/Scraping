@@ -1,0 +1,9 @@
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element <a href="javascript:void(0)">...</a> is not clickable at point (589, 657). Other element would receive the click: <div class="wootric-footer">...</div>
+  (Session info: chrome=77.0.3865.120)
+  
+  
+  
+  
+  
+  
+AttributeError: 'NoneType' object has no attribute 'replace'
