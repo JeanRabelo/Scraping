@@ -29,28 +29,24 @@ img = ImageTk.PhotoImage(Image.open(BytesIO(img_data)))
 class gui:
     def __init__(self, root):
         self.master = root
-        master.title = 'Uma GUI'
-
+        # master.title = 'Uma GUI'
         self.panel = tk.Label(root, image=img)
         self.panel.pack() #side="top", fill="both", expand="yes")
         self.entry = tk.Entry(root)
         self.entry.pack() #side="top", fill="both", expand="yes")
-
-        self.botao = tk.Button(root, text='Ok', command=on_button)
-        self.botao.pack(side="top", fill="both", expand="yes")
+        self.botao = tk.Button(root, text='Ok', command=self.on_button)
+        self.botao.pack() #side="top", fill="both", expand="yes"
 
     def on_button(self):
-        # print(self.entry.get())
-        print('botao apertado')
+        print(self.entry.get())
+        # print('botao apertado')
 
-
-
-panel = tk.Label(root, image=img)
-panel.pack() #side="top", fill="both", expand="yes")
-entry = tk.Entry(root)
-entry.pack() #side="top", fill="both", expand="yes")
-
-botao = tk.Button(root, text='Ok', command=print(entry.get()))
-botao.pack(side="top", fill="both", expand="yes")
-
+# panel = tk.Label(root, image=img)
+# panel.pack() #side="top", fill="both", expand="yes")
+# entry = tk.Entry(root)
+# entry.pack() #side="top", fill="both", expand="yes")
+#
+# botao = tk.Button(root, text='Ok', command=print(entry.get()))
+# botao.pack(side="top", fill="both", expand="yes")
+my_gui = gui(root)
 root.mainloop()
