@@ -18,7 +18,7 @@ driver = webdriver.Chrome()
 
 driver.get('https://nexoos.com.br')
 driver.implicitly_wait(time_to_wait=100)
-sleep(30)
+sleep(60)
 # driver.find_element_by_xpath("//a[contains(@href, '/mkt/lender/marketplace?view_mode=list')]").click()
 
 soup = BS(driver.page_source, 'html.parser')
