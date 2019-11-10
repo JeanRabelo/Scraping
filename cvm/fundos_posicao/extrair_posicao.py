@@ -8,28 +8,37 @@ from bs4 import BeautifulSoup as BS
 url_beginning = r'https://cvmweb.cvm.gov.br/SWB//Sistemas/SCW/CPublica/CConsolFdo/FormBuscaParticFdo.aspx'
 
 s = requests.Session()
-# input("Pressione enter para continuar...")
 response = s.get(url_beginning)
-# print(response.content)
 soup = BS(response.content, 'html.parser')
 txt_code = soup.find('img').get('src')[2:]
 print(txt_code)
-# input("Pressione enter para continuar...")
 root = tk.Tk()
 
-# def on_button():
-#     print(entry.get())
-
-# url_img = "https://cvmweb.cvm.gov.br/SWB/Sistemas/SCW/CPublica/RandomTxt.aspx?v1=0,189657236537736"
 url_img = "https://cvmweb.cvm.gov.br/SWB/Sistemas/SCW/CPublica" + txt_code
+        # https://cvmweb.cvm.gov.br/SWB//Sistemas/SCW/CPublica/RandomTxt.aspx?v1=0,340107971029406
+print(url_img)
 response = requests.get(url_img)
 img_data = response.content
 img = ImageTk.PhotoImage(Image.open(BytesIO(img_data)))
 
-class gui:
+def pegar(senha):
+    args = dict()
+    args['txtCNPJNome'] = 'Mantiqueira'
+    args['numRandom'] = senha
+    args['ddlTpFdo'] = 0
+    args['btnContinuar'] = 'Continuar >'
+
+    url_post2 = r'https://cvmweb.cvm.gov.br/SWB//Sistemas/SCW/CPublica/CConsolFdo/FormBuscaParticFdo.aspx'
+    url_post3 = r'https://cvmweb.cvm.gov.br/SWB/Sistemas/SCW/CPublica/CConsolFdo/ResultBuscaParticFdo.aspx?CNPJNome=Mantiqueira&TpPartic=0&Adm=false&numRandom='+senha+'&SemFrame='
+    response2 = s.post(url_post2, args)
+    response3 = s.get(url_post3)
+    soup3 = BS(response3.content, 'html.parser')
+    print(senha)
+    print(soup3)
+
+class gui_captcha:
     def __init__(self, root):
         self.master = root
-        # master.title = 'Uma GUI'
         self.panel = tk.Label(root, image=img)
         self.panel.pack() #side="top", fill="both", expand="yes")
         self.entry = tk.Entry(root)
@@ -38,15 +47,8 @@ class gui:
         self.botao.pack() #side="top", fill="both", expand="yes"
 
     def on_button(self):
-        print(self.entry.get())
-        # print('botao apertado')
+        pegar(self.entry.get())
+        self.master.destroy()
 
-# panel = tk.Label(root, image=img)
-# panel.pack() #side="top", fill="both", expand="yes")
-# entry = tk.Entry(root)
-# entry.pack() #side="top", fill="both", expand="yes")
-#
-# botao = tk.Button(root, text='Ok', command=print(entry.get()))
-# botao.pack(side="top", fill="both", expand="yes")
-my_gui = gui(root)
+my_gui = gui_captcha(root)
 root.mainloop()
