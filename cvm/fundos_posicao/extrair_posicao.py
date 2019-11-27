@@ -24,8 +24,8 @@ img = ImageTk.PhotoImage(Image.open(BytesIO(img_data)))
 def pegar(senha):
     args = dict()
     args['txtCNPJNome'] = 'Mantiqueira'
-    args['numRandom'] = senha
     args['ddlTpFdo'] = 0
+    args['numRandom'] = senha
     args['btnContinuar'] = 'Continuar >'
 
     url_post2 = r'https://cvmweb.cvm.gov.br/SWB//Sistemas/SCW/CPublica/CConsolFdo/FormBuscaParticFdo.aspx'
@@ -47,7 +47,7 @@ class gui_captcha:
         self.botao.pack() #side="top", fill="both", expand="yes"
 
     def on_button(self):
-        pegar(self.entry.get())
+        pegar(str(self.entry.get()))
         self.master.destroy()
 
 my_gui = gui_captcha(root)
