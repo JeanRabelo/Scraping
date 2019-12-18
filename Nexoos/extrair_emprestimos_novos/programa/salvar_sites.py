@@ -4,7 +4,8 @@ from time import sleep
 import pyautogui
 
 
-PATH_CONTROLE = r'C:\Users\jean_\Documents\GitHub\Scraping\Nexoos\extrair_emprestimos_novos\controle\controle.csv'
+# PATH_CONTROLE = r'C:\Users\jean_\Documents\GitHub\Scraping\Nexoos\extrair_emprestimos_novos\controle\controle.csv'
+PATH_CONTROLE = r'/home/jean/github/Scraping/Nexoos/extrair_emprestimos_novos/controle/controle.csv'
 STR_EMAIL = 'jeanpablosousarabelo@gmail.com'
 STR_PASSWORD = '9@VGn%Pr6!b7bwhXD8UQzih^ynSj!i'
 print(f'STR_EMAIL = {STR_EMAIL}')
