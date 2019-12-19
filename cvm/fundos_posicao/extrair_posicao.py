@@ -28,10 +28,6 @@ def pegar(senha):
     args['numRandom'] = senha
     args['btnContinuar'] = 'Continuar >'
 
-    # url_post2 = r'https://cvmweb.cvm.gov.br/SWB//Sistemas/SCW/CPublica/CConsolFdo/FormBuscaParticFdo.aspx'
-    # url_post3 = r'https://cvmweb.cvm.gov.br/SWB/Sistemas/SCW/CPublica/CConsolFdo/ResultBuscaParticFdo.aspx?CNPJNome=Mantiqueira&TpPartic=0&Adm=false&numRandom='+senha+'&SemFrame='
-    # response2 = s.post(url_post2, args)
-    # response3 = s.get(url_post3)
     url_post3 = r'https://cvmweb.cvm.gov.br/SWB/Sistemas/SCW/CPublica/CConsolFdo/ResultBuscaParticFdo.aspx?CNPJNome=Mantiqueira&TpPartic=0&Adm=false&numRandom='+senha+'&SemFrame='
     response3 = s.post(url_post3, args)
     soup3 = BS(response3.content, 'html.parser')
